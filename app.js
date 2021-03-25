@@ -7,7 +7,7 @@ app.use(express.static('public'));
 
 app.get('/users', (req, res) => {
   res.json({
-    item:User.list()
+    items:User.list()
   });
 });
 
