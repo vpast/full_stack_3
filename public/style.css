@@ -1,0 +1,18 @@
+.container {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.users {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.user {
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 22%;
+}
