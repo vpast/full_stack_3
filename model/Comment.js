@@ -3504,7 +3504,7 @@ const comments = [
 const list = (postId) => {
   if (postId) {
     return comments.filter((comment) => {
-      if (postId == comment.id) {
+      if (postId == comment.postId) {
         return true
       }
       else {
