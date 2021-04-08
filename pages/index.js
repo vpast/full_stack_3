@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link"
 
 const IndexPage = () => {
   const [users, setUsers] = useState([]);
@@ -15,6 +16,7 @@ const IndexPage = () => {
         return <div className="user" key={user.id}>
           <h3>{user.name}</h3>
           <p>{user.email}</p>
+          <Link href={`/users/${user.id}`}><a>Follow</a></Link>
           </div>;
       })}
     </div>
