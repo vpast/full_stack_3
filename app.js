@@ -1,7 +1,9 @@
+require("dotenv").config()
+require("./model/mongo/db")
 const cors = require("cors")
-const User = require("./model/User")
-const Post = require("./model/Post")
-const Comment = require("./model/Comment")
+const User = require("./model/mongo/User")
+const Post = require("./model/mongo/Post")
+const Comment = require("./model/mongo/Comment")
 const express = require('express');
 const app = express();
 const PORT = 3001;
@@ -10,42 +12,50 @@ app.use(cors());
 app.use(express.static('public'));
 
 // Users
-app.get('/users', (req, res) => {
+app.get('/users', async (req, res) => {
   res.json({
-    items:User.list()
+    items:await User.find()
   });
 });
 
-app.get('/users/:id', (req, res) => {
+app.get('/users/:id', async (req, res) => {
   res.json({
-    item:User.getById(req.params.id)
+    item:await User.findOne({id:req.params.id})
   })
 })
 
 
 //Post
-app.get('/posts', (req, res) => {
+app.get('/posts', async (req, res) => {
+  const criteria = {}
+  if (req.query.userId) {
+    criteria.userId = req.query.userId
+  }
   res.json({
-    items:Post.list(req.query.userId)
+    items:await Post.find(criteria)
   });
 });
 
-app.get('/posts/:id', (req, res) => {
+app.get('/posts/:id', async (req, res) => {
   res.json({
-    item:Post.getById(req.params.id)
+    item:await Post.findOne({id:req.params.id})
   })
 })
 
 //Comments
-app.get('/comments', (req, res) => {
+app.get('/comments', async (req, res) => {
+  const criteria = {}
+  if (req.query.postId) {
+    criteria.postId = req.query.postId
+  }
   res.json({
-    items:Comment.list(req.query.postId)
+    items:await Comment.find(criteria)
   });
 });
 
-app.get('/comments/:id', (req, res) => {
+app.get('/comments/:id', async (req, res) => {
   res.json({
-    item:Comment.getById(req.params.id)
+    item:await Comment.findOne({id:req.params.id})
   })
 })
 
