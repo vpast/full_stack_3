@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link"
+import MainLayout from "../components/layouts/Main"
 
 const IndexPage = () => {
   const [users, setUsers] = useState([]);
@@ -11,7 +12,7 @@ const IndexPage = () => {
       });
   }, []);
   return (
-    <div className="container">
+    <MainLayout>
       <div className="row">
         {users.map((user) => {
           return (
@@ -25,7 +26,7 @@ const IndexPage = () => {
           )
         })}
       </div>
-    </div>
+    </MainLayout>
   );
 };
 

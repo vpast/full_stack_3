@@ -1,6 +1,7 @@
 import {useRouter} from "next/router"
 import {useState, useEffect} from "react"
 import Link from "next/link"
+import MainLayout from "../../components/layouts/Main"
 
 const UserPage = () => {
   const router = useRouter()
@@ -23,7 +24,7 @@ const UserPage = () => {
     })
   }, [user_id])
   return (
-    <div className="container">
+    <MainLayout>
       {!!user && (
       <div className="row">
         <div className="col-md-3 mb-3">
@@ -47,7 +48,7 @@ const UserPage = () => {
           )
         })}
       </div>
-    </div>
+    </MainLayout>
   )
 }
 

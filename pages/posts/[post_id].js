@@ -1,5 +1,6 @@
 import {useRouter} from "next/router"
 import {useState, useEffect} from "react"
+import MainLayout from "../../components/layouts/Main"
 
 const PostPage = () => {
   const router = useRouter()
@@ -22,7 +23,7 @@ const PostPage = () => {
     })
   }, [post_id])
   return (
-    <div className="container">
+    <MainLayout>
       {!!post && (
       <div className="row">
         <div className="col-md-3 mb-3">
@@ -45,7 +46,7 @@ const PostPage = () => {
           )
         })}
       </div>
-    </div>
+    </MainLayout>
   )
 }
 
