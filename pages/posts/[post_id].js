@@ -24,17 +24,23 @@ const PostPage = () => {
   return (
     <div className="container">
       {!!post && (
-      <div>
-        <h2>{post.title}</h2>
-        <p>{post.body}</p>
+      <div className="row">
+        <div className="col-md-3 mb-3">
+          <div className="item">
+            <h2>{post.title}</h2>
+            <p>{post.body}</p>
+          </div>
+        </div>
       </div>
       )}
-      <div className="items">
+      <div className="row">
         {comments.map((comment) => {
           return (
-            <div className="item" key={comment.id}>
-              <h2>{comment.name}</h2>
-              <p>{comment.body}</p>
+            <div className="col-md-3 mb-3" key={comment.id}>
+              <div className="item">
+                <h2>{comment.name}</h2>
+                <p>{comment.body}</p>
+              </div>
             </div>
           )
         })}

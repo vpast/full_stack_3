@@ -25,18 +25,24 @@ const UserPage = () => {
   return (
     <div className="container">
       {!!user && (
-      <div>
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
+      <div className="row">
+        <div className="col-md-3 mb-3">
+          <div className="item">
+            <h2>{user.name}</h2>
+            <p>{user.email}</p>
+          </div>
+        </div>
       </div>
       )}
-      <div className="items">
+      <div className="row">
         {posts.map((post) => {
           return (
-            <div className="item" key={post.id}>
-              <h2>{post.title}</h2>
-              <p>{post.body}</p>
-              <Link href={`/posts/${post.id}`}><a>Follow</a></Link>
+            <div className="col-md-3 mb-3" key={post.id}>
+              <div className="item">
+                <h2>{post.title}</h2>
+                <p>{post.body}</p>
+                <Link href={`/posts/${post.id}`}><a>Follow</a></Link>
+              </div>
             </div>
           )
         })}
