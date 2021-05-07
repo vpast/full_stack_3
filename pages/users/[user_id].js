@@ -3,6 +3,7 @@ import {useState, useEffect} from "react"
 import Link from "next/link"
 import MainLayout from "../../components/layouts/Main"
 import Post from "../../components/cards/Post"
+import Avatar from "../../components/users/Avatar"
 
 const UserPage = () => {
   const router = useRouter()
@@ -28,11 +29,8 @@ const UserPage = () => {
     <MainLayout>
       {!!user && (
       <div className="row">
-        <div className="col-md-3 mb-3">
-          <div className="item">
-            <h2>{user.name}</h2>
-            <p>{user.email}</p>
-          </div>
+        <div className="col-md-4 mb-3">
+          <Avatar item={user} />
         </div>
       </div>
       )}

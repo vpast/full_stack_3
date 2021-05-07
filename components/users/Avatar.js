@@ -1,16 +1,21 @@
-const Avatar = () => {
+import Link from "next/link";
+
+const Avatar = ({ item, link }) => {
+  const { id, name, email } = item;
   return (
     <div className="text-center">
-      <img src="https://i.pravatar.cc/140" className="bd-placeholder-img rounded-circle square-140"></img>
-      <h2>Heading</h2>
+      <img
+        src={`https://i.pravatar.cc/140?img=${id}`}
+        className="bd-placeholder-img rounded-circle square-140"
+      ></img>
+      <h2>{name}</h2>
+      <p>{email}</p>
       <p>
-        Some representative placeholder content for the three columns of text
-        below the carousel. This is the first column.
-      </p>
-      <p>
-        <a className="btn btn-secondary" href="#">
-          View details »
-        </a>
+        {!!link && (
+          <Link href={link}>
+            <a className="btn btn-secondary">View details »</a>
+          </Link>
+        )}
       </p>
     </div>
   );

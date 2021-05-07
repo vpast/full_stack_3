@@ -2,8 +2,9 @@ import MainLayout from "../components/layouts/Main";
 import PostCard from "../components/cards/Post";
 import ArticleCard from "../components/cards/Article";
 import AboutCard from "../components/cards/About";
-import { post } from "../data/mock";
+import { post, user, comment } from "../data/mock";
 import Avatar from "../components/users/Avatar";
+import Toast from "../components/comments/Toast";
 
 const Template = () => {
   return (
@@ -18,22 +19,25 @@ const Template = () => {
       </div>
       <div className="row">
         <div className="col-lg-4">
-          <Avatar />
+          <Avatar item={user} link={`/users/${user.id}`}/>
         </div>
         {/* /.col-lg-4 */}
         <div className="col-lg-4">
-          <Avatar />
+          <Avatar item={user} link={`/users/${user.id}`} />
         </div>
         {/* /.col-lg-4 */}
         <div className="col-lg-4">
-          <Avatar />
+          <Avatar item={user} link={`/users/${user.id}`} />
         </div>
         {/* /.col-lg-4 */}
       </div>
 
       <div className="row">
         <div className="col-md-8">
-          <ArticleCard />
+          <ArticleCard item={post} user={user} userLink={`/users/${user.id}`} />
+          <Toast item={comment} />
+          <Toast item={comment} />
+          <Toast item={comment} />
           {/* /.blog-post */}
           <nav className="blog-pagination" aria-label="Pagination">
             <a className="btn btn-outline-primary" href="#">

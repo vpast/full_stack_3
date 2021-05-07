@@ -1,14 +1,16 @@
-const ArticleCard = () => {
+import Link from "next/link"
+
+const ArticleCard = ({item, user, userLink}) => {
+  const {title, body} = item
+  const {username} = user
   return (
     <article className="blog-post">
-    <h2 className="blog-post-title">Sample blog post</h2>
+    <h2 className="blog-post-title">{title}</h2>
     <p className="blog-post-meta">
-      January 1, 2014 by <a href="#">Mark</a>
+      January 1, 2014 by <Link href={userLink}><a>{username}</a></Link>
     </p>
     <p>
-      This blog post shows a few different types of content that’s
-      supported and styled with Bootstrap. Basic typography, images, and
-      code are all supported.
+      {body}
     </p>
     <hr />
   </article>
