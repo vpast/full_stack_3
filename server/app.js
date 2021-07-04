@@ -4,6 +4,7 @@ const cors = require("cors")
 const UserController = require("./controller/User")
 const PostController = require("./controller/Post")
 const CommentController = require("./controller/Comment")
+const MovieController = require("./controller/Movie")
 const express = require('express');
 const app = express();
 const PORT = 3001;
@@ -26,6 +27,11 @@ app.get('/posts/:id', PostController.getById)
 app.get('/comments', CommentController.list);
 
 app.get('/comments/:id', CommentController.getById)
+
+//Movies
+app.get('/movies', MovieController.list);
+
+app.get('/movies/:id', MovieController.getById);
 
 app.use('*', (req, res) => {
   res.status(404).json({
