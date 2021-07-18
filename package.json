@@ -9,8 +9,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chart.js": "^3.4.1"
-  }
+  "license": "ISC"
 }
