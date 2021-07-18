@@ -71,7 +71,7 @@ const Weather = () => {
       <main>
         <div className="weatherCenter">
             <div className="weatherContainer layout">
-              <div className="wrapper">
+              <div className="mainWrapper">
                 <div className="inputWrapper">
                   <InputComponent setCity={setCity} />
                   {!!error && <ErrorInput error={error} />}
