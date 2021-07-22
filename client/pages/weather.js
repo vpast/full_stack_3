@@ -58,7 +58,7 @@ const Weather = () => {
   }, [data]);
 
   return (
-    <div>
+    <div className="weatherBody">
       <Head>
         <link
           rel="stylesheet"
