@@ -1,6 +1,6 @@
 const MovieCard = (props) => {
   const item = props.item
-  const {title, poster} = item
+  const {title, poster, _id} = item
   return(
     <article className="movie-line-entity">
         <div className="entity-poster" data-role="hover-wrap">
@@ -14,7 +14,7 @@ const MovieCard = (props) => {
         </div>
         <div className="entity-content">
           <h4 className="entity-title">
-            <a className="content-link" href="movie-info-sidebar-right.html">
+            <a className="content-link" href={`${_id}`}>
               {title}
             </a>
           </h4>
