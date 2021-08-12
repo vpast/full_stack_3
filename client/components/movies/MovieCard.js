@@ -14,7 +14,7 @@ const MovieCard = (props) => {
         </div>
         <div className="entity-content">
           <h4 className="entity-title">
-            <a className="content-link" href={`${_id}`}>
+            <a className="content-link" href={`movie/${_id}`}>
               {title}
             </a>
           </h4>
