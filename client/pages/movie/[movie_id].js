@@ -8,15 +8,18 @@ import MovieFooter from "../../components/movies/MovieFooter"
 
 const MoviePage = () => {
   const router = useRouter();
-  const { _id } = router.query;
+  const { movie_id } = router.query;
   const [movie, setMovie] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3001/movies/${_id}`)
+    if (!movie_id) {
+      return
+    }
+    fetch(`http://localhost:3001/movies/${movie_id}`)
       .then((res) => res.json())
       .then((data) => {
-        setMovie(data.items);
+        setMovie(data.item);
       });
-  }, []);
+  }, [movie_id]);
   return (
     <>
       <Head>
@@ -69,7 +72,6 @@ const MoviePage = () => {
       <MovieHeader />
       <MovieNavigator />
       <MovieDetail movie={movie} />
-      {console.log(movie)}
       <MovieFooter />
     </>
   );

@@ -1,4 +1,4 @@
-const MovieInfo = () => {
+const MovieInfo = ({movie}) => {
   return (
     <div className="section-line">
       <div className="movie-info-entity">
@@ -6,8 +6,8 @@ const MovieInfo = () => {
           <div className="embed-responsive embed-responsive-poster">
             <img
               className="embed-responsive-item"
-              src="http://via.placeholder.com/340x510"
-              alt="true"
+              src={movie.poster}
+              alt
             />
           </div>
           <div
@@ -29,14 +29,10 @@ const MovieInfo = () => {
           </div>
         </div>
         <div className="entity-content">
-          <h2 className="entity-title">Blick</h2>
+          <h2 className="entity-title">{movie.title}</h2>
           <div className="entity-category">
             <a className="content-link" href="movies-blocks.html">
-              comedy
-            </a>
-            ,
-            <a className="content-link" href="movies-blocks.html">
-              detective
+              {movie.genres}
             </a>
           </div>
           <div className="entity-info">
@@ -45,73 +41,50 @@ const MovieInfo = () => {
                 <span className="text-theme info-icon">
                   <i className="fas fa-star" />
                 </span>
-                <span className="info-text">8,7</span>
+                {/* {!!movie &&<span className="info-text">{movie.imdb.rating}</span>} */}
                 <span className="info-rest">/10</span>
               </div>
               <div className="info info-short">
                 <span className="text-theme info-icon">
                   <i className="fas fa-clock" />
                 </span>
-                <span className="info-text">130</span>
+                <span className="info-text">{movie.runtime}</span>
                 <span className="info-rest">&nbsp;min</span>
               </div>
             </div>
           </div>
           <ul className="entity-list">
             <li>
+              {console.log(movie)}
               <span className="entity-list-title">Release:</span>July 21, 2014
               (Dolby Theatre), August 1, 2014 (United States)
             </li>
             <li>
               <span className="entity-list-title">Directed:</span>
               <a className="content-link" href="#">
-                Lindson Wardens
-              </a>
-              ,
-              <a className="content-link" href="#">
-                Anabelle One
+                {movie.directors}
               </a>
             </li>
             <li>
               <span className="entity-list-title">Starring:</span>
               <a className="content-link" href="#">
-                Octopus Wardens
-              </a>
-              ,
-              <a className="content-link" href="#">
-                Quanta Wardens
-              </a>
-              ,
-              <a className="content-link" href="#">
-                Anabelle Two
-              </a>
-              ,
-              <a className="content-link" href="#">
-                Anabelle Three
+                {movie.cast}
               </a>
             </li>
             <li>
               <span className="entity-list-title">Production company:</span>
-              <a className="content-link" href="#">
-                Re-Production Bro.
-              </a>
-              ,
-              <a className="content-link" href="#">
-                Pentakid
-              </a>
+              {/* {!!movie &&<a className="content-link" href="#">
+                {movie.tomatoes.production}
+              </a>} */}
             </li>
             <li>
               <span className="entity-list-title">Country:</span>
               <a className="content-link" href="#">
-                USA
-              </a>
-              ,
-              <a className="content-link" href="#">
-                India
+                {movie.countries}
               </a>
             </li>
             <li>
-              <span className="entity-list-title">Language:</span>english
+              <span className="entity-list-title">Language:</span>{movie.languages}
             </li>
           </ul>
         </div>

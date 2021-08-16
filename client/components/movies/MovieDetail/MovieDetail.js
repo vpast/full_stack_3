@@ -4,13 +4,13 @@ import MovieInfo from "./MovieInfo";
 import MovieSidebar from "./MovieSidebar";
 import MovieSynopsis from "./MovieSynopsis";
 
-const MovieDetail = () => {
+const MovieDetail = ({movie}) => {
   return (
     <div className="container">
       <div className="sidebar-container">
         <div className="content">
           <section className="section-long">
-            <MovieInfo />
+            <MovieInfo movie={movie} />
             <MovieSynopsis />
             <MovieGallery />
             <MovieComments />
