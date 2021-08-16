@@ -41,7 +41,7 @@ const MovieInfo = ({movie}) => {
                 <span className="text-theme info-icon">
                   <i className="fas fa-star" />
                 </span>
-                {/* {!!movie &&<span className="info-text">{movie.imdb.rating}</span>} */}
+                {!!movie && !!movie.imdb &&<span className="info-text">{movie.imdb.rating}</span>}
                 <span className="info-rest">/10</span>
               </div>
               <div className="info info-short">
@@ -73,9 +73,9 @@ const MovieInfo = ({movie}) => {
             </li>
             <li>
               <span className="entity-list-title">Production company:</span>
-              {/* {!!movie &&<a className="content-link" href="#">
+              {!!movie && !!movie.tomatoes &&<a className="content-link" href="#">
                 {movie.tomatoes.production}
-              </a>} */}
+              </a>}
             </li>
             <li>
               <span className="entity-list-title">Country:</span>

@@ -8,7 +8,7 @@ const MovieFilter = () => {
             <div className="col-sm-6 col-lg-3">
               <div className="input-view-flat input-group">
                 <select className="form-control" name="genre">
-                  <option selected="true">genre</option>
+                  <option >genre</option>
                   <option>action</option>
                   <option>adventure</option>
                   <option>comedy</option>
@@ -56,7 +56,7 @@ const MovieFilter = () => {
             <div className="col-sm-6 col-lg-3">
               <div className="input-view-flat input-group">
                 <select className="form-control" name="sortBy">
-                  <option selected="true">sort by</option>
+                  <option >sort by</option>
                   <option>name</option>
                   <option>release year</option>
                   <option>rating</option>
