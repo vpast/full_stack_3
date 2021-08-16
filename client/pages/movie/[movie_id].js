@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import MovieDetail from "../../components/movies/MovieDetail/MovieDetail";
 import MovieHeader from "../../components/movies/MovieHeader";
 import MovieNavigator from "../../components/movies/MovieNavigator";
+import MovieFooter from "../../components/movies/MovieFooter"
 
 const MoviePage = () => {
   const router = useRouter();
@@ -69,6 +70,7 @@ const MoviePage = () => {
       <MovieNavigator />
       <MovieDetail movie={movie} />
       {console.log(movie)}
+      <MovieFooter />
     </>
   );
 };
