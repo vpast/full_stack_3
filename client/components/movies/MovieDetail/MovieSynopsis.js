@@ -1,4 +1,4 @@
-const MovieSynopsis = () => {
+const MovieSynopsis = ({movie}) => {
   return (
     <div className="section-line">
       <div className="section-head">

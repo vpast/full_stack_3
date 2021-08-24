@@ -66,8 +66,6 @@ const MovieInfo = ({movie}) => {
             <li>
               <span className="entity-list-title">Starring:</span>
                 {!!movie && !!movie.cast && movie.cast.map((cast, key) => <a className="content-link" href="#" key={key}>{cast + (key ? ', ' : '')}</a>)}
-
-                {console.log(movie.cast)}
             </li>
             <li>
               <span className="entity-list-title">Production company:</span>

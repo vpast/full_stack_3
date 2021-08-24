@@ -11,7 +11,7 @@ const MovieDetail = ({movie}) => {
         <div className="content">
           <section className="section-long">
             <MovieInfo movie={movie} />
-            <MovieSynopsis />
+            <MovieSynopsis movie={movie} />
             <MovieGallery />
             <MovieComments />
           </section>
