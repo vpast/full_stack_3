@@ -31,7 +31,7 @@ const MovieInfo = ({movie}) => {
         <div className="entity-content">
           <h2 className="entity-title">{movie.title}</h2>
           <div className="entity-category">
-              {!!movie && !!movie.genres && movie.genres.map((genre, key) => <a className="content-link" href="movies-blocks.html" key={key}>{genre + (key ? ', ' : '')} </a>)}
+              {!!movie && !!movie.genres && movie.genres.map((genre, key) => <a className="content-link" href="movies-blocks.html" key={key}>{genre + (key !== movie.genres.length - 1 ? ', ' : '')} </a>)}
           </div>
           <div className="entity-info">
             <div className="info-lines">
@@ -65,7 +65,7 @@ const MovieInfo = ({movie}) => {
             </li>
             <li>
               <span className="entity-list-title">Starring:</span>
-                {!!movie && !!movie.cast && movie.cast.map((cast, key) => <a className="content-link" href="#" key={key}>{cast + (key ? ', ' : '')}</a>)}
+                {!!movie && !!movie.cast && movie.cast.map((cast, key) => <a className="content-link" href="#" key={key}>{cast + (key !== movie.cast.length - 1 ? ', ' : '')}</a>)}
             </li>
             <li>
               <span className="entity-list-title">Production company:</span>
