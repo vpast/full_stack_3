@@ -17,7 +17,7 @@ const list = async (req, res, next) => {
 const getById = async (req, res, next) => {
   try {
     res.json({
-      item: await User.findOne({ id: req.params.id }),
+      item: await User.findById(req.params.id),
     });
   } catch (error) {
     next(error);
